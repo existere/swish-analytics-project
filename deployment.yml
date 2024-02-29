@@ -3,19 +3,19 @@ kind: Deployment
 metadata:
   name: swish-analytics-demo
   labels:
-    app: r_python_alpine
+    app: r-python-alpine
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: r_python_alpine
+      app: r-python-alpine
   template:
     metadata:
       labels:
-        app: r_python_alpine
+        app: r-python-alpine
     spec:
       containers:
-      - name: r_python_alpine
+      - name: r-python-alpine
         image: ellipticalgadzooks/python_r_alpine:latest
         command: ["tail"]
         args: ["-f", "/dev/null"]
