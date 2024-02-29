@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: swish-analytics-demo
+  labels:
+    app: r_python_alpine
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: r_python_alpine
+  template:
+    metadata:
+      labels:
+        app: r_python_alpine
+    spec:
+      containers:
+      - name: r_python_alpine
+        image: ellipticalgadzooks/python_r_alpine:latest
+        command: ["tail"]
+        args: ["-f", "/dev/null"]

@@ -11,8 +11,9 @@
      - use a .dockerignore file
 3. Scan the recently created container and evaluate the CVEs that it might contain. 
    - Create a report of your findings and follow best practices to remediate the CVE 
-     - report
+     - [report](https://github.com/existere/swish-analytics-project/actions/runs/8101930095/job/22143279617#step:7:24)
    - What would you do to avoid deploying malicious packages? 
+     - In this case I could set the image scan step to fail on error before pushing to the registry and/or procution clusters
 4. Use the created image to create a kubernetes deployment with a command that will keep the pod running 
 5. Expose the deployed resource 
 6. Every step mentioned above have to be in a code repository with automated CI/CD 
