@@ -2,15 +2,22 @@
 
 1. Create an image with python2, python3, R, install a set of requirements and upload it to docker hub. 
 2. For the previously created image 
-a. Share build times 
-b. How would you improve build times? 
+   - Share build times
+     - [Initial build](https://github.com/existere/swish-analytics-project/actions/runs/8099393750/job/22135027064) time of 12m 1s
+   - How would you improve build times? 
+     - After implementing a registry cache [the build](https://github.com/existere/swish-analytics-project/actions/runs/8099393750/job/22138074675) was reduced to 5s for the same image
+     - Depending on the set of requirements, it might be faster to use a debian/ubuntu based image since most python packages include precompiled binary wheels on pypi, whereas alpine packages (if available) compile from source
+     - Build a multi-stage dockerfile and compare the build times to the current dockerfile which uses the alpine native virtual packages, which are delted before final build
+     - use a .dockerignore file
 3. Scan the recently created container and evaluate the CVEs that it might contain. 
-a. Create a report of your findings and follow best practices to remediate the CVE 
-b. What would you do to avoid deploying malicious packages? 
+   - Create a report of your findings and follow best practices to remediate the CVE 
+     - report
+   - What would you do to avoid deploying malicious packages? 
 4. Use the created image to create a kubernetes deployment with a command that will keep the pod running 
 5. Expose the deployed resource 
 6. Every step mentioned above have to be in a code repository with automated CI/CD 
-7. How would you monitor the above deployment? Explain or implement the tools that you would use 
+7. How would you monitor the above deployment? Explain or implement the tools that you would use
+   - explanation 
 
 
 
