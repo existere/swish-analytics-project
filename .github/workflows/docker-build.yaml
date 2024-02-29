@@ -30,6 +30,7 @@ jobs:
           context: .
           load: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/python_r_alpine:latest
+          cache-from: type=registry,ref=${{ secrets.DOCKERHUB_USERNAME }}/python_r_alpine:cache
 
       - name: Scan the Docker image for vulnerabilities
         continue-on-error: true
