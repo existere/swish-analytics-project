@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: swish-analytics-demo
+  labels:
+    app: swish-analytics-demo
+spec:
+  type: LoadBalancer
+  ports:
+    - port: 80
+      targetPort: 8080
+      protocol: TCP
+  selector:
+    app: swish-analytics-demo

@@ -3,19 +3,21 @@ kind: Deployment
 metadata:
   name: swish-analytics-demo
   labels:
-    app: r-python-alpine
+    app: swish-analytics-demo
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: r-python-alpine
+      app: swish-analytics-demo
   template:
     metadata:
       labels:
-        app: r-python-alpine
+        app: swish-analytics-demo
     spec:
       containers:
-      - name: r-python-alpine
+      - name: swish-analytics-demo
         image: ellipticalgadzooks/python_r_alpine:latest
+        ports:
+        - containerPort: 8080
         command: ["tail"]
         args: ["-f", "/dev/null"]
